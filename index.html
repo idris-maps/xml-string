@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Xml-string : Utility to create XML strings. Can be used to write any XML based files such as SVG, HTML or GPX.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Xml-string</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/idris-maps/xml-string">View on GitHub</a>
+
+          <h1 id="project_title">Xml-string</h1>
+          <h2 id="project_tagline">Utility to create XML strings. Can be used to write any XML based files such as SVG, HTML or GPX.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/idris-maps/xml-string/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/idris-maps/xml-string/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="xml-string" class="anchor" href="#xml-string" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>xml-string</h1>
+
+<p>Utility to create XML strings. Can be used to write any XML based files such as SVG, HTML or GPX.</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install</h2>
+
+<pre><code>$ npm install xml-string
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>var xmlString = require('xml-string')
+</code></pre>
+
+<h3>
+<a id="create" class="anchor" href="#create" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.create()</h3>
+
+<pre><code>var svg = xmlString.create('svg')
+</code></pre>
+
+<h3>
+<a id="child" class="anchor" href="#child" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.child()</h3>
+
+<p>Append a child element</p>
+
+<pre><code>var svg = xmlString.create('svg')
+var g = svg.child('g')
+</code></pre>
+
+<h3>
+<a id="attr" class="anchor" href="#attr" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.attr()</h3>
+
+<p>Add attributes</p>
+
+<pre><code>var svg = xmlString.create('svg')
+var g = svg.child('g')
+g.attr({id:'group'})
+</code></pre>
+
+<h3>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.data()</h3>
+
+<p>Add data</p>
+
+<pre><code>var svg = xmlString.create('svg')
+var g = svg.child('g')
+g.attr({id:'group'})
+var text = g.child('text')
+text.data('Hello world')
+</code></pre>
+
+<h3>
+<a id="outer" class="anchor" href="#outer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>.outer()</h3>
+
+<p>Returns the XML string</p>
+
+<pre><code>var svg = xmlString.create('svg')
+var g = svg.child('g')
+g.attr({id:'group'})
+var text = g.child('text')
+text.data('Hello world')
+
+console.log(svg.outer())
+// returns
+// '&lt;svg&gt;&lt;g id="group"&gt;&lt;text&gt;Hello world&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;'
+</code></pre>
+
+<h2>
+<a id="aliases" class="anchor" href="#aliases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Aliases</h2>
+
+<ul>
+<li>
+<strong>.child()</strong> &gt; <strong>.c()</strong>
+</li>
+<li>
+<strong>.attr()</strong> &gt; <strong>.a()</strong>
+</li>
+<li>
+<strong>.data()</strong> &gt; <strong>.d()</strong>
+</li>
+</ul>
+
+<p>Example:</p>
+
+<pre><code>var svg = xmlString.create('svg')
+var g = svg.c('g')
+g.a({id:'group'})
+var text = g.c('text')
+text.d('Hello world')
+
+console.log(svg.outer())
+// returns
+// '&lt;svg&gt;&lt;g id="group"&gt;&lt;text&gt;Hello world&lt;/text&gt;&lt;/g&gt;&lt;/svg&gt;'
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Xml-string maintained by <a href="https://github.com/idris-maps">idris-maps</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
