@@ -4,50 +4,50 @@ Utility to create XML strings. Can be used to write any XML based files such as 
 
 ## Install
 
-```
+```bash
 $ npm install xml-string
 ```
 
 ## Usage
 
-```
-var xmlString = require('xml-string')
+```javascript
+const xml = require('xml-string')
 ```
 
 ### .create()
 
-```
-var svg = xmlString.create('svg')
+```javascript
+const svg = xml.create('svg')
 ```
 
 ### .child()
 
 Append a child element
 
-```
-var svg = xmlString.create('svg')
-var g = svg.child('g')
+```javascript
+const svg = xml.create('svg')
+const g = svg.child('g')
 ```
 
 ### .attr()
 
 Add attributes
 
-```
-var svg = xmlString.create('svg')
-var g = svg.child('g')
-g.attr({id:'group'})
+```javascript
+const svg = xml.create('svg')
+const g = svg.child('g')
+g.attr({ id: 'group' })
 ```
 
 ### .data()
 
 Add data
 
-```
-var svg = xmlString.create('svg')
-var g = svg.child('g')
-g.attr({id:'group'})
-var text = g.child('text')
+```javascript
+const svg = xml.create('svg')
+const g = svg.child('g')
+g.attr({ id: 'group' })
+const text = g.child('text')
 text.data('Hello world')
 ```
 
@@ -55,11 +55,11 @@ text.data('Hello world')
 
 Returns the XML string
 
-```
-var svg = xmlString.create('svg')
-var g = svg.child('g')
-g.attr({id:'group'})
-var text = g.child('text')
+```javascript
+const svg = xmlString.create('svg')
+const g = svg.child('g')
+g.attr({ id: 'group' })
+const text = g.child('text')
 text.data('Hello world')
 
 console.log(svg.outer())
@@ -75,11 +75,11 @@ console.log(svg.outer())
 
 Example:
 
-```
-var svg = xmlString.create('svg')
-var g = svg.c('g')
-g.a({id:'group'})
-var text = g.c('text')
+```javascript
+const svg = xml.create('svg')
+const g = svg.c('g')
+g.a({ id:'group' })
+const text = g.c('text')
 text.d('Hello world')
 
 console.log(svg.outer())
