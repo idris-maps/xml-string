@@ -1,23 +1,27 @@
 {
   "name": "xml-string",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "ts-node node_modules/tape/bin/tape src/test/*.spec.ts | tap-spec"
+    "test": "ts-node node_modules/tape/bin/tape src/test/*.spec.ts | tap-spec",
+    "prepublish": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/tape": "^4.2.34",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.1",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.6"
+    "tape": "^4.13.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/idris-maps/xml-string"
-  }
+  },
+  "dependencies": {}
 }

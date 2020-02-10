@@ -33,7 +33,7 @@ var Tag = /** @class */ (function () {
     };
     Tag.prototype.attr = function (newAttributes) {
         var previousAttributes = this.attributes;
-        this.attributes = __assign({}, previousAttributes, newAttributes);
+        this.attributes = __assign(__assign({}, previousAttributes), newAttributes);
         return this;
     };
     Tag.prototype.a = function (newAttributes) {
